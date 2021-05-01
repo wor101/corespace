@@ -38,7 +38,14 @@ class CoreSpaceTest < MiniTest::Test
   def test_skills
     get '/skills'
     assert_equal(200, last_response.status)
-    assert_includes(last_response.body, "Sure Shot")
+    assert_includes(last_response.body, 'Sure Shot')
   end
-   
+  
+  def test_skills_category
+    get '/skills/machine'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, 'Body Protocol')
+    assert_includes(last_response.body, 'Take any two actions and then lose 1 Health')
+  end
+
 end
