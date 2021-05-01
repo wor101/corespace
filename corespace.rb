@@ -47,3 +47,10 @@ get '/skills/:category' do
 
   erb :skills_category, layout: :layout
 end
+
+get '/skills/:category/:skill' do
+  category_name = params[:category]
+  skill_name = params[:skill]
+  @skill = load_skills[category_name][skill_name]
+  erb :skill, layout: :layout
+end 

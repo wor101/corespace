@@ -1,0 +1,8 @@
+<h1><%= @skill['name'] %></h1>
+  <ul>
+    <% (1..3).each do |level| %>
+      <% unless @skill[level].nil? %>
+        <p><%=level%>: <%= @skill[level]%><br>
+      <% end %>
+    <% end %>
+  </ul>
