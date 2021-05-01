@@ -174,4 +174,20 @@ augmented:
     1: "Boost your vitality. Make a Move action or Ranged Assault action.ORRestore 1 Health."
     2: "Boost your senses. Look at the top two Event Cards and then place them back onto the deck in the same order. Then make a Move action"
     3: "Boost your speed and strength. Make a Move action, and before or after it, either:Make a close assault attack with 6 combat dice.ORMake a ranged attack with 4 combat dice.ORMake a ranged attack with 6 combat dice, but then lose 1 Health."
-    
+machine:
+  reroute:
+    name: "Reroute"
+    image: ''
+    1: "Reaction: Use after being defeated. You are no longer defeated – restore 2 Health and Stand Up"
+    2: "You can activate self-repair systems and restore 2 Health."
+    3: "Use when in base contact with a wall that does not contain a door or window. You can patch into the internal substructure to recharge. Restore your Health to its maximum."
+  scanners:
+    name: "Scanners"
+    image: ''
+    1: "Target a cargo crate within short range and LoS. Inspect the contents and then put it back inside"
+    2: "You can intercept Purge sensors and relay false data. Target any 2 Purge characters (rank 1-3 only) within medium range and make a Move action with them in a direction of your choice."
+    3: "You can send out a jamming pulse that blocks all transmissions and micro control data. Reduce or increase the Hostility Tracker by 2 points. All other Traders with the Machine Class and Purge of rank 1-3 miss their next turn."
+
+
+
+
