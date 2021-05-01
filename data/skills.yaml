@@ -187,7 +187,22 @@ machine:
     1: "Target a cargo crate within short range and LoS. Inspect the contents and then put it back inside"
     2: "You can intercept Purge sensors and relay false data. Target any 2 Purge characters (rank 1-3 only) within medium range and make a Move action with them in a direction of your choice."
     3: "You can send out a jamming pulse that blocks all transmissions and micro control data. Reduce or increase the Hostility Tracker by 2 points. All other Traders with the Machine Class and Purge of rank 1-3 miss their next turn."
-
-
-
-
+  body-protocol:
+    name: "Body Protocol"
+    image: ''
+    1: "Reaction: Use at any time. Make a Move action."
+    2: "Target a friendly character in base contact. They restore 1 Health. While in contact, you may take any or all hits that they suffer on yourself instead until the end of the round."
+    3: "Reaction: Use at any time. Make two Move actions and a Close Assault action, in any order. After the Close Assault action, if the enemy has not been defeated, roll a combat die. If you score one or more hits, the enemy is knocked prone"
+  repair:
+    name: "Repair"
+    image: ''
+    1: "Make a Repair or Clear Jam action on yourself or any other character or equipment in base contact, with one automatic hit added to the roll."
+    2: "You can apply three Repair Points to yourself or any item or machine in base contact"
+    3: "Release a cloud of repair nanites. Fully Repair one object/heal any Machine character in short range (including yourself), without rolling. Any other objects, items or Machine characters in short range can apply 1 Repair Point"
+  overdrive:
+    name: "Overdrive"
+    image: ''
+    1: "Take any action."
+    2: "Take any two actions and then lose 1 Health."
+    3: "You overload your power cells and self-destruct. Make a ranged attack against each character within short range with 5 combat dice. Make a ranged attack against each character in medium range with 2 combat dice. After resolving the attacks roll the Chance Die- 1-2: Every part of you and your equipment is destroyed. This character is no more and is removed from the campaign permanently. 3-4: Every part of you is destroyed and this character is no more, as above. However, each of your equipment tokens is scattered from the point where you stood. This equipment is broken, but can be Repaired. 5-6: Every part of your body and your equipment is destroyed, but remarkably your AI chip-set is intact. Take the Objective token and scatter it from the point where you stood. The character can be restored in the Trade Phase as described on page 138."
+  
