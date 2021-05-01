@@ -205,4 +205,26 @@ machine:
     1: "Take any action."
     2: "Take any two actions and then lose 1 Health."
     3: "You overload your power cells and self-destruct. Make a ranged attack against each character within short range with 5 combat dice. Make a ranged attack against each character in medium range with 2 combat dice. After resolving the attacks roll the Chance Die- 1-2: Every part of you and your equipment is destroyed. This character is no more and is removed from the campaign permanently. 3-4: Every part of you is destroyed and this character is no more, as above. However, each of your equipment tokens is scattered from the point where you stood. This equipment is broken, but can be Repaired. 5-6: Every part of your body and your equipment is destroyed, but remarkably your AI chip-set is intact. Take the Objective token and scatter it from the point where you stood. The character can be restored in the Trade Phase as described on page 138."
-  
+merg:
+  charge:
+    name: "Charge"
+    image: ''
+    1: "Make a Move action that ends in base contact with an enemy, and then make a Knock Back action. Any hits on the Knock Back action are applied as damage to the enemy in addition to the normal effects. Armour applies as normal"
+    2: "While making Move actions this round you can make a free close assault attack on up to 3 characters that you enter contact with during your Move, ignoring attacks of opportunity from these characters"
+  disconnect:
+    name: "Disconnect"
+    image: ''
+    1: "You allow your natural rage to Àood your body. For this turn you can Move an additional 2 inches and roll 2 extra combat dice in Close Assault. At the end of the turn, you become disconnected from your handler."
+    2: "You fll your body with unbridled rage. For this turn you gain an extra action. You can also Move an additional 2 inches and roll 2 extra combat dice in Close Assault. Any enemies that you enter contact with during your Moves this turn are knocked prone. At the end of the turn, you become disconnected from your handler"
+  heel:
+    name: "Heel"
+    image: ''
+    1: "Make a Move action towards your handler via the shortest possible route. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal)"
+    2: "Make up to two Move actions towards your handler via the shortest possible route. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal). Your handler also restores 1 Health."
+    3: "Make up to three Move actions (up to the normal 11 inch limit) towards your handler via the shortest possible route. You may move through other characters, making a free Knock Back action on each one you pass through. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal). Your handler also restores 1 Health"
+  sonic-roar:
+    name: "Sonic Roar"
+    image: ''
+    1: "You use your modulated vocal chords to unleash a powerful blast. All characters within short range suffer an attack with 1 combat die that ignores armour. Augmented, Machine and Purge characters are not affected."
+    2: "You use your modulated vocal chords to unleash a powerful blast that affects all matter. A single character (of any type except Purge rank 4 and above) within medium range and LoS suffers an attack with 2 combat dice that ignores armour. If the target survives they are knocked prone."
+    
