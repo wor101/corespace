@@ -1,0 +1,13 @@
+<h1><%=@skill_category.capitalize %></h1>
+<ul>
+  <% @category.each_pair do |skill, details| %>
+    <li>
+      <h3><%= details['name'] %></h3>
+      <ul>
+        <p>1: <%= details[1]%><br>
+        <p>2: <%= details[2]%><br>
+        <p>3: <%= details[3]%><br>
+      </ul>
+    </li>
+  <% end %>
+</ul>

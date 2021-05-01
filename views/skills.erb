@@ -1,0 +1,15 @@
+<h1>Skills Page</h1>
+<ul>
+  <% @skills.each_pair do |category, category_skills| %>
+    <li>
+      <a href="skills/<%= category %>"><%= category.capitalize %></a>
+      <ul>
+        <% category_skills.each_pair do |skill, details| %>
+          <li>
+            <a href="skills/<%= category %>/<%= skill %>"><%= details['name'] %> </a>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
