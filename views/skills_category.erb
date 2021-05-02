@@ -3,6 +3,9 @@
   <% @category.each_pair do |skill, details| %>
     <li>
       <h3>
+        <a href="/skills/<%= @skill_category %>/<%= skill %>">
+          <img src="/icons/<%= details['image'] %>" >
+        </a>
         <a href="/skills/<%= @skill_category %>/<%= skill %>"><%= details['name'] %></a>
       </h3>
       <ul>
