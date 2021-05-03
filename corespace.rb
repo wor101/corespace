@@ -121,6 +121,18 @@ get '/crew' do
 end
 
 get '/crew/new_trader' do
+  @classes = load_classes
+  
   
   erb :new_trader, layout: :layout
+end
+
+post '/crew/new_trader' do
+  trader_name = params[:trader_name]
+  trader_class = load_classes[params[:trader_class]]
+  
+  #need to validate name: make sure it is not a duplicate or empty
+  
+  session[:trader] = {name: trader_name, trader_class: trader_class, skills: {} }
+  
 end
