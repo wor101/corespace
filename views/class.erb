@@ -1,3 +1,7 @@
+<% if session[:message] %>
+  <h3 class="message"><%= session.delete(:message) %></h3>
+<% end %>
+
 <h1><%= @char_class['name'] %></h1>
 <ul>
   <li><b>Description:</b> <%= @char_class['description'] %></li>
@@ -6,10 +10,8 @@
 
     <% @class_skills.each_pair do |skill, details| %>
       <li>
-        <a href="/skills/<%=skill%>"><%= details['name'] %></a>
-        <p>Max Rank of <%= @char_class['skills'][skill] %></p>
+        <a href="/skills/<%= details['category'] %>/<%=skill%>"><%= details['name'] %> [MR <%= @char_class['skills'][skill] %>]</a>
       </li>
     <% end %>
   </ul>
 </ul>
-<p><%=@class_skills.to_s %></p>

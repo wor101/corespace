@@ -1,3 +1,7 @@
+<% if session[:message] %>
+  <h3 class="message"><%= session.delete(:message) %></h3>
+<% end %>
+
 <h1>Skills</h1>
 <ul>
   <% @skills.each_pair do |category, category_skills| %>

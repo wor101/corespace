@@ -1,0 +1,11 @@
+<% if session[:message] %>
+  <h3 class="message"><%= session.delete(:message) %></h3>
+<% end %>
+
+<% if session[:crew].nil? %>
+  <form action="/crew/new_trader"> 
+    <button type ="submit">Create Crew</button>
+  </form>
+<% else %>
+  <h1><%= session[:crew].to_s %></h1>
+<% end %>

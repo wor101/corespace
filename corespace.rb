@@ -46,6 +46,24 @@ helpers do
 
     all_skills_hash.select { |skill, details|  @char_class['skills'].keys.include?(skill) } 
   end
+  
+  def valid_skill_category?(skills, category_name)
+      if skills[category_name].nil?
+        session[:message] = "#{category_name} is not a valid skill category."
+        false
+      else
+        true
+      end
+  end
+  
+  def valid_skill?(skills, skill_name)
+    if skills[skill_name].nil?
+      session[:message] = "#{skill_name} is not a valid skill name."
+      false
+    else
+      true
+    end
+  end
 
 end
 
@@ -63,14 +81,22 @@ end
 get '/skills/:category' do
   @skill_category = params[:category]
   @skills = load_skills
-  @category = @skills[@skill_category]
+  
+  redirect '/skills' unless valid_skill_category?(@skills, @skill_category)
 
+  @category = @skills[@skill_category]
+  
   erb :skills_category, layout: :layout
 end
 
 get '/skills/:category/:skill' do
   category_name = params[:category]
   skill_name = params[:skill]
+  skills = load_skills
+  
+  redirect '/skills' unless valid_skill_category?(skills, category_name)
+  redirect "/skills/#{category_name}" unless valid_skill?(skills[category_name], skill_name)
+  
   @skill = load_skills[category_name][skill_name]
   erb :skill, layout: :layout
 end
@@ -87,4 +113,14 @@ get '/classes/:class_name' do
   @class_skills = load_class_skills(@char_class)
   
   erb :class, layout: :layout
+end
+
+get '/crew' do
+  
+  erb :crew, layout: :layout
+end
+
+get '/crew/new_trader' do
+  
+  erb :new_trader, layout: :layout
 end

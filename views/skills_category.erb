@@ -1,3 +1,7 @@
+<% if session[:message] %>
+  <h3 class="message"><%= session.delete(:message) %></h3>
+<% end %>
+
 <h1><%=@skill_category.capitalize %></h1>
 <ul>
   <% @category.each_pair do |skill, details| %>

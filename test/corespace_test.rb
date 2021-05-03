@@ -29,6 +29,10 @@ class CoreSpaceTest < MiniTest::Test
       file.write(content)
     end
   end
+
+  def session
+    last_request.env["rack.session"]
+  end
   
   def test_index
     get '/'
@@ -46,6 +50,24 @@ class CoreSpaceTest < MiniTest::Test
     assert_equal(200, last_response.status)
     assert_includes(last_response.body, 'Body Protocol')
     assert_includes(last_response.body, 'Take any two actions and then lose 1 Health')
+  end
+  
+  def test_invalid_skills_category
+    get '/skills/invalid_category'
+    assert_equal(302, last_response.status)
+    assert_equal("invalid_category is not a valid skill category.", session[:message])
+  end
+  
+  def test_skill_page
+    get '/skills/machine/overdrive'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Take any two actions and then lose 1 Health")
+  end
+  
+  def test_invalid_skill_page
+    get '/skills/stealth/backstab'
+    assert_equal(302, last_response.status)
+    assert_equal("backstab is not a valid skill name.", session[:message])
   end
 
 end
