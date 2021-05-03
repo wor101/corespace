@@ -1,0 +1,8 @@
+**Todo list***
+1. create user login and BCrypt password store
+2. crew creation page
+  - trader creation
+    - assign class
+    - assign trained skills at correct levels
+  - store crew as object in session data
+  - ability to save and download crew session data

@@ -1,0 +1,9 @@
+<h1>Classes</h1>
+
+<ul>
+  <% @classes.each_pair do |char_class, details| %>
+    <li>
+      <a href="classes/<%= char_class %>"><%= details['name'] %></a>
+    </li>
+  <% end %>
+</ul>

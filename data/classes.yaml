@@ -1,0 +1,87 @@
+---
+soldier:
+  name: 'Soldier'
+  description: "The Soldier is a crew member focused on combat. The Ranged Skill tree is the primary tree for the class, but the soldier is also adept at close combat if the need arises. The have a high degree of endurance allowing them to operate a peak efficiency throughout a mission. Though they are neither as good at ranged combat as the Hunter, nor as good at close combat as the Support their ability to fight their way out of either situation is invaluable."
+  skills:
+    sure-shot: 3
+    marksman: 3
+    stubborn: 3
+    kata: 3
+    reflexes: 3
+    onslaught: 3
+    weapons-expert: 2
+tech:
+  name: 'Tech'
+  description: "The Tech is a class that provides their crew with substantial utility. The Tech Skill tree is primary for the class, allowing the team to control battlefield. Disrupt, Regulate, and Hack keeps the doors opening and the Purge shut down. The Tech is not a front line fighter, preferring to avoid combat. With Camouflage and Hard to Hit, they are capable of staying out of the line of fire. Add in the ability to Assist and Distract for their teammates, they are a welcome member among crews. "
+  skills:
+    disrupt: 3
+    regulate: 3
+    assist: 3
+    hack: 3
+    camouflage: 3
+    hard-to-hit: 3
+    distraction: 3
+hunter:
+  name: 'Hunter'
+  description: "The Hunter in an expert in ranged combat. The class pulls from the Ranged, Close Assault, and Stealth trees equally. It uses abilities in all of them to hit opponents from a distance, and maintain that space when the enemy tries to close it. The hunter also comes loaded with the most passive abilities of any class meaning no matter what the situation, the Hunter almost always has a tool for the job available."
+  skills:
+    marksman: 3
+    weapons-expert: 3
+    disarm: 3
+    combat-expert: 3
+    ambush: 3
+    fade-to-black: 3
+    evade: 3
+support:
+  name: 'Support'
+  description: "The Support is always ready to rumble. With a focus in the Endurance skill tree as well as Kata skills, the Support Class deals out and absorbs close combat damage with peak efficiency. Energize helps the Support get to wherever they are needed the most in a fight. The Support also has the Regulate ability to help with Purge management, making them a tank for all seasons. "
+  skills:
+    walk-it-off: 3
+    onslaught: 3
+    stubborn: 3
+    impervious: 3
+    regulate: 3
+    kata: 2
+    energize: 1
+augmented:
+  name: 'Augmented'
+  description: "The Augmented Class brings utility as well as an incredibly high potential at later levels. With a focus in the Augmented Skill tree, stopping or even slowing a determined Augmented crew member is a daunting task. They can control the physical environment around them, and even manage events affecting the battle. They are fast, can attack without weapons, and are annoyingly difficult to hit. Their ability to Assist their teammates makes sure that even in the early game, it's always good to have an Augmented with you."
+  skills:
+    accelerate: 3
+    blast: 3
+    manipulate: 3
+    energize: 3
+    impervious: 3
+    hard-to-hit: 3
+    assist: 2
+machine:
+  name: 'Machine'
+  description: "Machines are multi-functional crew members with a unique set of skills. They can perform basic services like scanning crates, unjamming weapons, and repairing machines. They aren't just mechanics, Machines can manipulate other machines, including the purge. They also can serve as powerful bodyguards capable of mixing it up with the best of them. Add in the Reroute ability, and your standard Machine takes a licking and just keeps on ticking."
+  skills:
+    scanners: 3
+    overdrive: 3
+    repair: 3
+    bodyguard-protocol: 3
+    reroute: 3
+    accelerate: 2
+merg:
+  name: "Merg"
+  description: "The Merg is a powerful combination of offense and defense. The Merg skill tree is the primary focus of the class. This allows the Merg to be a high efficiency front line fighter, closing in on enemies and knocking them from even the most fortified of positions. The Merg is also an adept at protector. It can use its armor and health to absorb damage otherwise intended for its handler. Few things are as terrifying as the fury of a disconnected Merg in the midst of your ranks."
+  skills:
+    sonic-roar: 2
+    charge: 2
+    disconnect: 2
+    heel: 3
+    onslaught: 2
+    ambush: 1
+crewman:
+  name: 'Crewman'
+  description: "The Crewman class is a generalist in every sense of the word. The class has a focus in the Cunning skill tree which allows them to function on guile rather than relying on raw combat efficiency. A Crewman class can do a little bit of everything. They can fire off reaction shots when attacked. They have the Endurance to mitigate some damage. The can persuade opposing traders and civilians to avoid conflict altogether. They are slippery in close combat, often escaping without damage and some extra gear in tow. Finally, they have enough Tech to have limited control over the Purge and can get through doors where needed. Crewman don't excel in any one particular area the way the other classes do, but they can do more things than any other class. "
+  skills:
+    counter-shot: 3
+    walk-it-off: 3
+    persuasion: 3
+    light-fingers: 3
+    evade: 2
+    ambush: 2
+    hack: 2
