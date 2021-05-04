@@ -44,8 +44,10 @@ helpers do
       end
     end
 
-    all_skills_hash.select { |skill, details|  @char_class['skills'].keys.include?(skill) } 
+    all_skills_hash.select { |skill, details|  char_class['skills'].keys.include?(skill) } 
   end
+  
+  
   
   def valid_skill_category?(skills, category_name)
       if skills[category_name].nil?
@@ -131,6 +133,7 @@ post '/crew/new_trader' do
   class_name = params[:t_class]
   trader_name = params[:trader_name]
   classes = load_classes
+  #selected_class = classes.select { |name, details| name == class_name }.values[0]
   selected_class = classes.select { |name, details| name == class_name }
   
   # need to verify trader_name
@@ -142,5 +145,12 @@ post '/crew/new_trader' do
 end
 
 get '/crew/new_trader/select_skills' do 
-  session[:trader].to_s
+  @trader = session[:trader]
+  @class_id = @trader['trader_class'].keys[0]
+  @class_skills = @trader['trader_class'][@class_id]['skills']
+  @available_skills = load_class_skills(@trader['trader_class'][@class_id])
+  
+  
+  
+  erb :select_skills, layout: :layout
 end

@@ -1,0 +1,25 @@
+<% if session[:message] %>
+  <h3 class="message"><%= session.delete(:message) %></h3>
+<% end %>
+
+<h1>Name: <%= @trader['name'] %></h1>
+<h3><b>Available Skills<b></b></h3>
+<ul>
+  <% @available_skills.each do |skill, details| %>
+    <li>
+      <%= details['name'] %> 
+      <select>
+        <% (0..@class_skills[skill]).each do |level| %>
+          <option><%= level %></option>
+        <% end %>
+      </select>
+    </li>
+  <% end %>
+</ul><br>
+<h3><b>Selected Skills</b></h3>
+
+
+
+<p><%= @class_skills.to_s %></p>
+<p><%= @trader['trader_class'].to_s %></p>
+<p><%= @available_skills.to_s %></p>
