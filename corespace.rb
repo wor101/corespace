@@ -128,11 +128,19 @@ get '/crew/new_trader' do
 end
 
 post '/crew/new_trader' do
+  class_name = params[:t_class]
   trader_name = params[:trader_name]
-  trader_class = load_classes[params[:trader_class]]
+  classes = load_classes
+  selected_class = classes.select { |name, details| name == class_name }
   
-  #need to validate name: make sure it is not a duplicate or empty
+  # need to verify trader_name
+
+  session[:trader] = {'name' => trader_name, 'trader_class' => selected_class, 'skills' => {} }
   
-  session[:trader] = {name: trader_name, trader_class: trader_class, skills: {} }
+  redirect '/crew/new_trader/select_skills'
   
+end
+
+get '/crew/new_trader/select_skills' do 
+  session[:trader].to_s
 end

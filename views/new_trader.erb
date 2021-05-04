@@ -4,11 +4,14 @@
 <h1>New Trader</h1>
 <form action='/crew/new_trader' method='post'>
   <label for="trader_name">Name: </label><input type="text" id="trader_name" name="trader_name"><br><br>
-  <label for="trader_class">Class: </label>
-  <select name="trader_class" id="trader_class">
+  <label for="t_class">Class: </label>
+  <select name="t_class" id="t_class">
     <% @classes.each_pair do |trader_class, details| %>
       <option value="<%= trader_class %>"><%= details['name'] %></option>
     <% end %>
   </select><br><br>
   <button type ="submit">Create Trader</button>
 </form>
+
+
+
