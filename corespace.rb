@@ -150,7 +150,17 @@ get '/crew/new_trader/select_skills' do
   @class_skills = @trader['trader_class'][@class_id]['skills']
   @available_skills = load_class_skills(@trader['trader_class'][@class_id])
   
-  
-  
   erb :select_skills, layout: :layout
+end
+
+post '/crew/new_trader/select_skills' do
+  @trader = session[:trader]
+  selected_skill = params['skill_name']
+  skill_level = params['skill_level']
+  @trader['skills'][selected_skill] = skill_level
+  session[:trader] = @trader
+  
+  
+  redirect '/crew/new_trader/select_skills'
+
 end
