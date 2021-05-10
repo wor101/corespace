@@ -7,5 +7,20 @@
     <button type ="submit">Create Crew</button>
   </form>
 <% else %>
-  <h1><%= session[:crew].to_s %></h1>
+  <ul>
+    <% session[:crew].each_pair do |name, trader_hash| %>
+      <li>
+        <%= name %>
+        <form action="/crew/delete_trader" method="post">
+          <input id="delete_name" name="delete_name" type="hidden" value="<%= name %>">
+          <button type="submit">Delete Trader</button>
+        </form>
+      </li>
+    <% end %>    
+  </ul>
+  <form action="/crew/new_trader"> 
+    <button type ="submit">Add Trader</button>
+  </form>
 <% end %>
+
+<p><%= session[:crew].to_s %></p>

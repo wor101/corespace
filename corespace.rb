@@ -160,7 +160,23 @@ post '/crew/new_trader/select_skills' do
   @trader['skills'][selected_skill] = skill_level
   session[:trader] = @trader
   
-  
   redirect '/crew/new_trader/select_skills'
+end
 
+post '/crew/new_trader/save_trader' do
+  trader_name = session[:trader]['name']
+  if session[:crew].nil? || session[:crew].empty?
+    session[:crew] = { trader_name => session[:trader] }
+  else
+    session[:crew][trader_name] = session[:trader]
+  end
+  #session.delete(:trader)
+  
+  redirect '/crew'
+end
+
+post '/crew/delete_trader' do
+  session[:crew].delete(params[:delete_name])
+  
+  redirect '/crew'
 end
