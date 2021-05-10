@@ -118,13 +118,14 @@ get '/classes/:class_name' do
 end
 
 get '/crew' do
+  session.delete(:trader) unless session[:trader].nil?
   
   erb :crew, layout: :layout
 end
 
 get '/crew/new_trader' do
   @classes = load_classes
-  
+  session.delete(:trader) unless session[:trader].nil?
   
   erb :new_trader, layout: :layout
 end
@@ -133,11 +134,10 @@ post '/crew/new_trader' do
   class_name = params[:t_class]
   trader_name = params[:trader_name]
   classes = load_classes
-  #selected_class = classes.select { |name, details| name == class_name }.values[0]
   selected_class = classes.select { |name, details| name == class_name }
   
   # need to verify trader_name
-
+  #session.delete(:trader) unless session[:trader].nil?
   session[:trader] = {'name' => trader_name, 'trader_class' => selected_class, 'skills' => {} }
   
   redirect '/crew/new_trader/select_skills'
@@ -145,6 +145,8 @@ post '/crew/new_trader' do
 end
 
 get '/crew/new_trader/select_skills' do 
+  #redirect '/crew/new_trader' if session[:trader].nil?
+ 
   @trader = session[:trader]
   @class_id = @trader['trader_class'].keys[0]
   @class_skills = @trader['trader_class'][@class_id]['skills']
@@ -170,7 +172,7 @@ post '/crew/new_trader/save_trader' do
   else
     session[:crew][trader_name] = session[:trader]
   end
-  #session.delete(:trader)
+  session.delete(:trader)
   
   redirect '/crew'
 end
