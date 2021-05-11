@@ -187,3 +187,11 @@ post '/crew/delete_trader' do
   
   redirect '/crew'
 end
+
+post '/test_params' do
+  param1 = params[:param1]
+  session1 = session[:sess1]
+  
+  #p param1.to_s
+  p session1.to_s
+end

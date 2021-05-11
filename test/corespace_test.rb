@@ -32,6 +32,10 @@ class CoreSpaceTest < MiniTest::Test
     end
   end
   
+  def create_session_trader
+    env "rack.session", {trader: {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{}}}
+  end
+  
   def session
     last_request.env["rack.session"]
   end
@@ -107,10 +111,49 @@ class CoreSpaceTest < MiniTest::Test
   end
   
   def test_add_trader_creation
-    post '/crew/new_trader', params = {t_class: 'soldier', trader_name: 'Jacob'}
-    assert_equal(session[:t_class], 'soldier')
+    post '/crew/new_trader', t_class: 'soldier', trader_name: 'Jacob'
+    assert_equal(302, last_response.status)
     
+    get '/crew/new_trader/select_skills'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, 'Jacob')
   end
+  
+  def test_select_skills
+    create_session_trader
+    post '/crew/new_trader/select_skills', { skill_name: 'marksman', skill_level: 3 }
+    assert_equal(302, last_response.status)
+    
+    get last_response["Location"]
+    assert_equal(200, last_response.status)
+    assert_equal({"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{"marksman"=>"3"}}, session[:trader])
+  end
+  
+  def test_save_trader
+    create_session_trader
+    post '/crew/new_trader/select_skills', { skill_name: 'marksman', skill_level: 3 }
+    assert_equal(302, last_response.status)
+    
+    get last_response["Location"]
+    assert_equal(200, last_response.status)
+    
+    post '/crew/new_trader/save_trader'
+    assert_equal(302, last_response.status)
+    
+    get last_response["Location"]
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Jungo")
+    assert_includes(last_response.body, "Add Trader")
+  end
+  
+
+  
+  def test_params
+    env "rack.session", {sess1: 'Goodbye!' }  # sets a session variable for test!
+    post '/test_params', {param1: 'Hello World!'}# sets a param variable for test!
+    assert_includes(last_response.body, 'Goodbye!')
+  end
+  
     
 
 end
