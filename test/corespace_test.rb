@@ -144,7 +144,9 @@ class CoreSpaceTest < MiniTest::Test
     assert_equal(200, last_response.status)
     assert_includes(last_response.body, "Jungo")
     assert_includes(last_response.body, "Add Trader")
+    assert_equal(session[:crew], {"Jungo" => {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{"marksman"=>"3"}}} )
   end
+  
   
 
   
