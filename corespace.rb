@@ -113,7 +113,7 @@ end
 get '/classes/:class_name' do 
   @classes = load_classes
   @char_class = @classes[params[:class_name]]
-  @class_skills = load_class_skills(@char_class)
+  @class_skills = load_class_skills(params[:class_name])
   
   erb :class, layout: :layout
 end
@@ -139,7 +139,7 @@ post '/crew/new_trader' do
   
   # need to verify trader_name
   #session.delete(:trader) unless session[:trader].nil?
-  session[:trader] = {'name' => trader_name, 'trader_class' => class_name, 'skills' => {} }
+  session[:trader] = {'name' => trader_name, 'trader_class' => tech, 'skills' => {} }
   
   redirect '/crew/new_trader/select_skills'
   

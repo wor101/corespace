@@ -17,6 +17,8 @@ class CoreSpaceTest < MiniTest::Test
   def setup
   FileUtils.mkdir_p(data_path)
   FileUtils.cp('./data/skills.yaml', data_path) #have to use origin data path from root for rake test to work
+  FileUtils.cp('./data/classes.yaml', data_path) #have to use origin data path from root for rake test to work
+  
   end
   
   def teardown
@@ -28,6 +30,10 @@ class CoreSpaceTest < MiniTest::Test
     File.open(File.join(data_path, name), "w") do |file|
       file.write(content)
     end
+  end
+  
+  def create_crew
+    
   end
 
   def session
@@ -69,5 +75,45 @@ class CoreSpaceTest < MiniTest::Test
     assert_equal(302, last_response.status)
     assert_equal("backstab is not a valid skill name.", session[:message])
   end
+  
+  def test_classes_page
+    get '/classes'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Soldier")
+    assert_includes(last_response.body, "Augmented")
+    assert_includes(last_response.body, "Crewman")
+  end
+  
+  def test_class_page
+    get '/classes/support'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "The Support is always ready to rumble")
+    assert_includes(last_response.body, "Onslaught [MR 3]")
+  end
+  
+  def test_empty_crew_page
+    get '/crew'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Create Crew")
+  end
+  
+  def test_save_trader
+    #post '/crew/new_trader/save_trader', trader: "{'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }"
+    #get 'crew', crew: {'Jugalo' => {'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }}
+    #assert_equal(302, last_response.status)
+    #assert_equal(last_response., "{'Jugalo' => {'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }}")
+  end
+  
+  def test_add_trader_page
+    get '/crew/new_trader'
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Create Trader")
+  end
+  
+  # def test_add_trader_creation
+    
+    
+  # end
+    
 
 end

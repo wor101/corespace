@@ -2,7 +2,7 @@
   <h3 class="message"><%= session.delete(:message) %></h3>
 <% end %>
 
-<% if session[:crew].nil? %>
+<% if session[:crew].nil? || session[:crew].empty? %>
   <form action="/crew/new_trader"> 
     <button type ="submit">Create Crew</button>
   </form>
