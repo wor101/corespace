@@ -139,7 +139,7 @@ post '/crew/new_trader' do
   
   # need to verify trader_name
   #session.delete(:trader) unless session[:trader].nil?
-  session[:trader] = {'name' => trader_name, 'trader_class' => tech, 'skills' => {} }
+  session[:trader] = {'name' => trader_name, 'trader_class' => class_name, 'skills' => {} }
   
   redirect '/crew/new_trader/select_skills'
   

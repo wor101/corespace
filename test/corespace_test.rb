@@ -32,10 +32,6 @@ class CoreSpaceTest < MiniTest::Test
     end
   end
   
-  def create_crew
-    
-  end
-
   def session
     last_request.env["rack.session"]
   end
@@ -110,10 +106,11 @@ class CoreSpaceTest < MiniTest::Test
     assert_includes(last_response.body, "Create Trader")
   end
   
-  # def test_add_trader_creation
+  def test_add_trader_creation
+    post '/crew/new_trader', params = {t_class: 'soldier', trader_name: 'Jacob'}
+    assert_equal(session[:t_class], 'soldier')
     
-    
-  # end
+  end
     
 
 end
