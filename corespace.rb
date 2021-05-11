@@ -36,6 +36,7 @@ helpers do
   
   def load_class_skills(char_class)
     skills = load_skills
+    class_skill_list = load_classes[char_class]['skills']
     all_skills_hash = {}
 
     skills.each_pair do |category, skills|
@@ -44,7 +45,7 @@ helpers do
       end
     end
 
-    all_skills_hash.select { |skill, details|  char_class['skills'].keys.include?(skill) } 
+    all_skills_hash.select { |skill, details|  class_skill_list.include?(skill) } 
   end
   
   
@@ -138,19 +139,23 @@ post '/crew/new_trader' do
   
   # need to verify trader_name
   #session.delete(:trader) unless session[:trader].nil?
-  session[:trader] = {'name' => trader_name, 'trader_class' => selected_class, 'skills' => {} }
+  session[:trader] = {'name' => trader_name, 'trader_class' => class_name, 'skills' => {} }
   
   redirect '/crew/new_trader/select_skills'
   
 end
 
 get '/crew/new_trader/select_skills' do 
-  #redirect '/crew/new_trader' if session[:trader].nil?
+  redirect '/crew/new_trader' if session[:trader].nil?
  
   @trader = session[:trader]
-  @class_id = @trader['trader_class'].keys[0]
-  @class_skills = @trader['trader_class'][@class_id]['skills']
-  @available_skills = load_class_skills(@trader['trader_class'][@class_id])
+
+  classes = load_classes
+  trader_class = classes[@trader['trader_class']]
+  
+  
+  @class_skills = trader_class['skills']
+  @available_skills = load_class_skills(@trader['trader_class'])
   
   erb :select_skills, layout: :layout
 end
