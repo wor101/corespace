@@ -48,6 +48,14 @@ helpers do
     all_skills_hash.select { |skill, details|  class_skill_list.include?(skill) } 
   end
   
+  def all_skills_without_category
+    all_skills_array = load_skills.values
+    all_skills_hash = {}
+    all_skills_array.each do |category|
+      category.each_pair { |skill, details| all_skills_hash[skill] = details }
+    end
+    all_skills_hash
+  end
   
   
   def valid_skill_category?(skills, category_name)
@@ -186,6 +194,15 @@ post '/crew/delete_trader' do
   session[:crew].delete(params[:delete_name])
   
   redirect '/crew'
+end
+
+get '/crew/:trader' do
+  trader_name = params[:trader]
+  @trader = session[:crew][trader_name]
+  @all_skills = all_skills_without_category
+  @class_skills = load_class_skills(@trader['trader_class'])
+  
+  erb :trader, layout: :layout
 end
 
 post '/test_params' do

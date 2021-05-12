@@ -10,7 +10,7 @@
   <ul>
     <% session[:crew].each_pair do |name, trader_hash| %>
       <li>
-        <%= name %>
+        <a href='/crew/<%= name %>'><%= name %></a>
         <form action="/crew/delete_trader" method="post">
           <input id="delete_name" name="delete_name" type="hidden" value="<%= name %>">
           <button type="submit">Delete Trader</button>
