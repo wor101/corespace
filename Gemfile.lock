@@ -6,6 +6,9 @@ GEM
     erubis (2.7.0)
     minitest (5.14.4)
     multi_json (1.15.0)
+    nio4r (2.5.7)
+    puma (5.3.1)
+      nio4r (~> 2.0)
     rack (1.6.13)
     rack-protection (1.5.5)
       rack
@@ -33,11 +36,15 @@ DEPENDENCIES
   bcrypt
   erubis
   minitest
+  puma
   rack-test
   rake
   sinatra (~> 1.4.7)
   sinatra-contrib
   yaml
+
+RUBY VERSION
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.2.16
