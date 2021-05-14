@@ -11,12 +11,11 @@
       <form action="/crew/new_trader/select_skills" method="post">
         <input type="hidden" id="skill_name" name="skill_name" value="<%= skill %>">
         <select name="skill_level" id="skill_level">
+          <% if @trader['skills'][skill] %>
+            <option selected ><%= @trader['skills'][skill] %></option>
+          <% end %>
           <% (0..@class_skills[skill]).each do |level| %>
-            <% if @trader['skills'][skill] %>
-              <option selected ><%= @trader['skills'][skill] %></option>
-            <% else %>
               <option><%= level %></option>
-            <% end %>
           <% end %>
         </select>
         <button type="submit">Set Skill</button>
