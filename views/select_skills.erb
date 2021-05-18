@@ -15,7 +15,9 @@
             <option selected ><%= @trader['skills'][skill] %></option>
           <% end %>
           <% (0..@class_skills[skill]).each do |level| %>
+            <% unless @trader['skills'][skill].to_i  == level.to_i && level.to_i != 0 %>
               <option><%= level %></option>
+            <% end %>  
           <% end %>
         </select>
         <button type="submit">Set Skill</button>

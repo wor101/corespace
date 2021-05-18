@@ -196,6 +196,23 @@ post '/crew/delete_trader' do
   redirect '/crew'
 end
 
+post '/crew/save_crew' do
+  File.write('data/crew.yml', session[:crew].to_yaml)
+  
+  redirect '/crew'
+end
+
+post '/crew/download' do
+  send_file data_path + "/crew.yml", :filename => 'crew.yml', :type => 'Application/octet-stream'
+
+  redirect '/crew'
+end
+
+post '/crew/upload' do
+  
+  redirect '/crew'
+end
+
 get '/crew/:trader' do
   trader_name = params[:trader]
   @trader = session[:crew][trader_name]

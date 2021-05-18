@@ -21,6 +21,13 @@
   <form action="/crew/new_trader"> 
     <button type ="submit">Add Trader</button>
   </form>
+  <form action="/crew/save_crew" method="post"> 
+    <button type ="submit">Save Crew</button>
+  </form>
+  <form action="/crew/download" method="post"> 
+    <button type ="submit">Download Crew</button>
+  </form>
+
 <% end %>
 
 <p><%= session[:crew].to_s %></p>
