@@ -60,28 +60,28 @@ close-assault:
 endurance:
   walk-it-off:
     name: "Walk It Off"
-    image: ''
+    image: 'walk-it-off-128.png'
     category: 'endurance'
     1: "Restore 1 Health."
     2: "Reaction: Use after being targeted with an attack. Reduce damage sustained by 2."
     3: "Reaction: Use after being defeated. You are no longer defeated – restore 1 Health, Stand Up, and you may then make a Move action."
   onslaught:
     name: "Onslaught"
-    image: ''
+    image: 'onslaught-128.png'
     category: 'endurance'
     1: "Reaction: Use after scoring one or more hits on an enemy in close assault. Make another Close Assault action."
     2: "Reaction: Use after scoring one or more hits on an enemy with any attack. Make a Move if you wish, and then make another Close Assault action."
     3: "Use during a Move action. You may ignore attacks of opportunity during this Move, and you may make a close assault attack against each enemy you come into contact with while moving"
   stubborn:
     name: "Stubborn"
-    image: ''
+    image: 'stubborn-128.png'
     category: 'endurance'
     1: "Make a Move action."
     2: "Make a Move action followed by an Assault action."
     3: "Reaction: Use after being targeted with an attack. Ignore all hits scored, and thenmake a Move action and an Assault action in any order."
   impervious:
     name: "Impervious"
-    image: ''
+    image: 'impervious-128.png'
     category: 'endurance'
     1: "Reaction: Use when another rule or Skill causes you to lose any actions or miss your next turn. Ignore the effect."
     2: "Consider your physical armour value to be 2 higher than it currently is until the end of the round."
@@ -89,28 +89,28 @@ endurance:
 stealth:
   hard-to-hit:
     name: "Hard to Hit"
-    image: ''
+    image: 'hard-to-hit-128.png'
     category: 'stealth'
     1: "While in cover, you cannot be damaged by ranged attacks until the end of the round, although you can be targeted as normal."
     2: "While in cover or at more than short range, you cannot be damaged by ranged attacks until the end of the round, although you can be targeted as normal."
     3: "Make a Ranged Assault action followed by a Move action. You cannot be damaged by any enemy ranged attacks until the end of the round, although you can be targeted as normal."
   ambush:
     name: "Ambush"
-    image: ''
+    image: 'ambush-128.png'
     category: 'stealth'
     1: "Reaction: Use when an enemy ends a move within 4 inches of you and you are in full or partial cover. Make a Ranged Assault action against that enemy. You may make a Proximity Move before or after this action."
     2: "Reaction: Use when an enemy ends a move within 4 inches of you and you are in full or partial cover. Make a Move action and then an Assault action against that enemy. You may make a Proximity Move before or after these actions."
     3: "Reaction: Use when an enemy ends a move within 4 inches of you and you are in full or partial cover. Make a Move action, an Assault action against any enemy, and then another Move action. You may make a Proximity Move before, during or after these actions."
   camouflage:
     name: "Camouflage"
-    image: ''
+    image: 'camouflage-128.png'
     category: 'stealth'
     1: "While you are in base contact with any wall you cannot be targeted for the rest of the round. Enemies cannot enter base contact with you. You do not block LoS to other characters in any way."
     2: "Make a Ranged Assault action. While you are in base contact with any terrain you cannot be targeted for the rest of the round. Enemies cannot enter base contact with you. You do not block LoS to other characters in any way."
     3: "While you are not engaged with an enemy you cannot be targeted for the rest of the round. Enemies cannot enter base contact with you. You do not block LoS to other characters in any way. ; Reaction: At any time during the round you may interrupt play to make a Ranged Assault action."
   fade-to-black:
     name: "Fade to Black"
-    image: ''
+    image: 'fade-to-black-128.png'
     category: 'stealth'
     1: "Reaction: Use after being targeted with a ranged attack if you are within 4 inches of cover. Move into cover."
     2: "Reaction: Use after being targeted with a ranged attack if you are within 4 inches of cover. Move into cover, and ignore all hits scored in that attack."
@@ -118,28 +118,28 @@ stealth:
 cunning:
   distraction:
     name: "Distraction"
-    image: ''
+    image: 'distraction-128.png'
     category: 'cunning'
     1: "Use when making a Ranged Assault action. The target loses 1 action in its next turn in addition to any damage caused."
     2: "Make a Ranged Assault action. Any one enemy within short range of the target misses its entire next turn in addition to any damage caused. Then make a Move action."
     3: "Make a Ranged Assault action. You may then make a Move action with the target model (you cannot use this Move to enter base contact with an enemy), and it will miss its entire next turn in addition to any damage caused. Then make a Move action yourself."
   evade:
     name: "Evade"
-    image: ''
+    image: 'evade-128.png'
     category: 'cunning'
     1: "Reaction: Use when an enemy moves into base contact with you. Make a Move action, ignoring attacks of opportunity."
     2: "Reaction: Use when an enemy moves into base contact with you. In any order, make a Move action, ignoring attacks of opportunity, and an Assault action."
     3: "Reaction: Use when an enemy moves into base contact with you. In any order, make two Move actions, ignoring attacks of opportunity, and an Assault action. The attacker cannot do anything further this round, including using Skills."
   light-fingers:
     name: "Light Fingers"
-    image: ''
+    image: 'light-fingers-128.png'
     category: 'cunning'
     1: "Reaction: Use after being targeted with a close assault attack in which you took no damage. Take any item from the attacker’s item tray other than the one they attacked with. If you do not have space for it, it or another item you are holding must be dropped."
     2: "Reaction: Use after being targeted with a close assault attack. Take any item from the attacker’s item tray other than the one they attacked with. Items with the  icon can be used immediately. Otherwise, if you do not have space for it, it or another item you are holding must be dropped."
     3: "Reaction: Use after being targeted with a close assault attack. Take any item from the attacker’s item tray. Items with the icon can be used immediately. Otherwise, if you do not have space for it, it or another item you are holding must be dropped. Then make an immediate Move or Assault action, ignoring attacks of opportunity."
   persuasion:
     name: "Persuasion"
-    image: ''
+    image: 'persuasion-128.png'
     category: 'cunning'
     1: "Make a Persuade action against an enemy Trader (with their own default (not current) Skill statistic counting as their Per-suade value) within short range and LoS, to try to dissuade them from their mission. If successful, they miss their next turn."
     2: "Make a Persuade action against a non-Purge enemy within short range and LoS, with 1 additional die. Targeted Traders use their Skill statistic as above. The normal options apply (although enemy Traders will not join you), and in addition you can Persuade a character to miss their next turn."
@@ -147,28 +147,28 @@ cunning:
 tech:
   disrupt:
     name: "Disrupt"
-    image: ''
+    image: 'disrupt-128.png'
     category: 'tech'
     1: "Target an enemy Trader with the Tech Class within medium range. They cannot use any Tech Skills this round.ORTarget up to 2 Purge (rank 1-3 only) within medium range. They miss their next turn."
     2: "All enemy Traders with the Tech Class within medium range cannot use any Tech Skills this round.ORAll Purge (rank 1-3 only) within medium range miss their next turn."
     3: "Target an enemy Trader with the Tech Class within medium range. They cannot use any Tech Skills for the rest of the game.ORTarget an enemy Trader with the Tech Class anywhere on the board. They cannot use any Tech Skills for the rest of the round.ORAll Purge (rank 1-3 only) within medium range miss their next two turns.ORAll Purge (rank 1-3 only) on the board miss their next turn."
   assist:
     name: "Assist"
-    image: ''
+    image: 'assist-128.png'
     category: 'tech'
     1: "Target yourself or another member of your crew. They cannot be harmed by ranged attacks for the rest of the round."
     2: "Target yourself or another member of your crew. They restore 2 Health."
     3: "You co-ordinate your team with vital intelligence. Target yourself and two other members of your crew. Each character may make 1 action, resolved in any order."
   regulate:
     name: "Regulate"
-    image: ''
+    image: 'regulate-128.png'
     category: 'stealth'
     1: "You can jam enemy sensors to remove a peg from the Hostility Tracker.ORYou can apply one Repair Point to any item or machine in base contact."
     2: "Choose a Purge Entry Point and turn the counter over. Purge will not enter from this point until the next Hostility level is reached. If this Entry Point is rolled, roll again."
     3: "You hijack the Purge data stream and disrupt their mission intelligence. Choose a point anywhere on the board. All Purge (except Live Ones) within medium range of that point immediately move as far as their actions will allow toward that point (ignoring all targets and generating attacks of opportunity if they leave base contact) and will not act further this round."
   hack:
     name: "Hack"
-    image: ''
+    image: 'hack-128.png'
     category: 'tech'
     1: "Shut down a Purge character (rank 1-2 only) within medium range. Remove it from play.ORLock or unlock any door you are in base contact with."
     2: "Shut down up to 2 Purge characters (rank 1-2 only) within medium range. Remove them from play.ORLock or unlock any door within medium range."
@@ -176,28 +176,28 @@ tech:
 augmented:
   accelerate:
     name: "Accelerate"
-    image: ''
+    image: 'accelerate-128.png'
     category: 'augmented'
     1: "Make a Move action."
     2: "Make two extra Move and/or Assault actions this turn. You may make your other actions before, during or after these actions."
     3: "Make three extra Move and/or Assault actions this turn. You may make your other actions before, during or after these actions."
   blast:
     name: "Blast"
-    image: ''
+    image: 'blast-128.png'
     category: 'augmented'
     1: "You expel a focused percussive blast of energy from your limbs. Make a ranged attack with the following statistics: 3-2-0"
     2: "You expel the energy behind you to propel yourself up and forward. Make two Move actions ignoring all intervening cover and characters."
     3: "You expel energy in all directions. All characters within short range suffer an attack with 3 dice and are pushed away a number of inches equal to the hits scored, with no attacks of opportunity."
   manipulate:
     name: "Manipulate"
-    image: ''
+    image: 'manipulate-128.png'
     category: 'augmented'
     1: "You disrupt the mind of the enemy. Target an enemy in LoS. They miss their next turn."
     2: "You disrupt the enemy’s equipment. Target an item held by an enemy in LoS. That item immediately breaks."
     3: "You alter the environment around you. Perform one of the following:Move any small terrain item (such as a cargo crate or table) or loose item token in LoS up to short range from its current location.ORHurl any small to medium terrain item (like a vending machine or table) in medium range and LoS up to short range from its current location. If it hits a character, it will stop and an attack roll of 4 dice is made against the target."
   energize:
     name: "Energise"
-    image: ''
+    image: 'energise-128.png'
     category: 'augmented'
     1: "Boost your vitality. Make a Move action or Ranged Assault action.ORRestore 1 Health."
     2: "Boost your senses. Look at the top two Event Cards and then place them back onto the deck in the same order. Then make a Move action"
@@ -205,35 +205,35 @@ augmented:
 machine:
   reroute:
     name: "Reroute"
-    image: ''
+    image: 'reroute-128.png'
     category: 'machine'
     1: "Reaction: Use after being defeated. You are no longer defeated – restore 2 Health and Stand Up"
     2: "You can activate self-repair systems and restore 2 Health."
     3: "Use when in base contact with a wall that does not contain a door or window. You can patch into the internal substructure to recharge. Restore your Health to its maximum."
   scanners:
     name: "Scanners"
-    image: ''
+    image: 'scanners-128.png'
     category: 'machine'
     1: "Target a cargo crate within short range and LoS. Inspect the contents and then put it back inside"
     2: "You can intercept Purge sensors and relay false data. Target any 2 Purge characters (rank 1-3 only) within medium range and make a Move action with them in a direction of your choice."
     3: "You can send out a jamming pulse that blocks all transmissions and micro control data. Reduce or increase the Hostility Tracker by 2 points. All other Traders with the Machine Class and Purge of rank 1-3 miss their next turn."
   body-protocol:
     name: "Body Protocol"
-    image: ''
+    image: 'body-protocol-128.png'
     category: 'machine'
     1: "Reaction: Use at any time. Make a Move action."
     2: "Target a friendly character in base contact. They restore 1 Health. While in contact, you may take any or all hits that they suffer on yourself instead until the end of the round."
     3: "Reaction: Use at any time. Make two Move actions and a Close Assault action, in any order. After the Close Assault action, if the enemy has not been defeated, roll a combat die. If you score one or more hits, the enemy is knocked prone"
   repair:
     name: "Repair"
-    image: ''
+    image: 'repair-128.png'
     category: 'machine'
     1: "Make a Repair or Clear Jam action on yourself or any other character or equipment in base contact, with one automatic hit added to the roll."
     2: "You can apply three Repair Points to yourself or any item or machine in base contact"
     3: "Release a cloud of repair nanites. Fully Repair one object/heal any Machine character in short range (including yourself), without rolling. Any other objects, items or Machine characters in short range can apply 1 Repair Point"
   overdrive:
     name: "Overdrive"
-    image: ''
+    image: 'overdrive-128.png'
     category: 'machine'
     1: "Take any action."
     2: "Take any two actions and then lose 1 Health."
@@ -241,26 +241,26 @@ machine:
 merg:
   charge:
     name: "Charge"
-    image: ''
+    image: 'charge-128.png'
     category: 'merg'
     1: "Make a Move action that ends in base contact with an enemy, and then make a Knock Back action. Any hits on the Knock Back action are applied as damage to the enemy in addition to the normal effects. Armour applies as normal"
     2: "While making Move actions this round you can make a free close assault attack on up to 3 characters that you enter contact with during your Move, ignoring attacks of opportunity from these characters"
   disconnect:
     name: "Disconnect"
-    image: ''
+    image: 'disconnect-128.png'
     category: 'merg'
     1: "You allow your natural rage to Àood your body. For this turn you can Move an additional 2 inches and roll 2 extra combat dice in Close Assault. At the end of the turn, you become disconnected from your handler."
     2: "You fll your body with unbridled rage. For this turn you gain an extra action. You can also Move an additional 2 inches and roll 2 extra combat dice in Close Assault. Any enemies that you enter contact with during your Moves this turn are knocked prone. At the end of the turn, you become disconnected from your handler"
   heel:
     name: "Heel"
-    image: ''
+    image: 'heel-128.png'
     category: 'merg'
     1: "Make a Move action towards your handler via the shortest possible route. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal)"
     2: "Make up to two Move actions towards your handler via the shortest possible route. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal). Your handler also restores 1 Health."
     3: "Make up to three Move actions (up to the normal 11 inch limit) towards your handler via the shortest possible route. You may move through other characters, making a free Knock Back action on each one you pass through. If you enter base contact with your handler, any hits that your handler suffers from attacks this round are taken on you instead (armour applies as normal). Your handler also restores 1 Health"
   sonic-roar:
     name: "Sonic Roar"
-    image: ''
+    image: 'sonic-roar-128.png'
     category: 'merg'
     1: "You use your modulated vocal chords to unleash a powerful blast. All characters within short range suffer an attack with 1 combat die that ignores armour. Augmented, Machine and Purge characters are not affected."
     2: "You use your modulated vocal chords to unleash a powerful blast that affects all matter. A single character (of any type except Purge rank 4 and above) within medium range and LoS suffers an attack with 2 combat dice that ignores armour. If the target survives they are knocked prone."
