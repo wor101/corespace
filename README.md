@@ -9,4 +9,7 @@ Skill and trader class data is stored as a YAML file for easy expansion in the f
 Each trader can choose a class, skills, and skill levels to be trained in. Once a crew is created, the user can select any trader to quickly see 
 only the skills that trader is trained in and details on what the skill does.
 
-All data is stored in the users cookie and will be erased upon deletion.
+All data is stored in the users cookie and will be erased upon deletion
+
+Currently hosted on heroku at:
+https://nameless-ridge-10099.herokuapp.com/
