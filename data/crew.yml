@@ -1,25 +1,15 @@
 ---
-Rocky:
-  name: Rocky
-  trader_class: crewman
-  skills:
-    persuasion: '3'
-    ambush: '1'
-    evade: '2'
-Boston:
-  name: Boston
+Gregor:
+  name: Gregor
   trader_class: soldier
   skills:
-    kata: '3'
-    stubborn: '3'
-    onslaught: '1'
-Rosie:
-  name: Rosie
-  trader_class: hunter
-  skills: {}
-Igor:
-  name: Igor
-  trader_class: machine
+    sure-shot: '1'
+    weapons-expert: '2'
+    reflexes: '1'
+Dorkus:
+  name: Dorkus
+  trader_class: augmented
   skills:
-    scanners: '2'
-    repair: '1'
+    blast: '2'
+    hard-to-hit: '2'
+    energize: '1'

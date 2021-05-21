@@ -36,6 +36,10 @@ class CoreSpaceTest < MiniTest::Test
     env "rack.session", {trader: {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{}}}
   end
   
+  def create_session_crew
+    env "rack.session", {crew: { "Jungo" => {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{}}}}
+  end
+  
   def session
     last_request.env["rack.session"]
   end
@@ -97,13 +101,6 @@ class CoreSpaceTest < MiniTest::Test
     assert_includes(last_response.body, "Create Crew")
   end
   
-  def test_save_trader
-    #post '/crew/new_trader/save_trader', trader: "{'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }"
-    #get 'crew', crew: {'Jugalo' => {'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }}
-    #assert_equal(302, last_response.status)
-    #assert_equal(last_response., "{'Jugalo' => {'name' => 'Jugalo', 'trader_class' => 'tech', 'skills' => {} }}")
-  end
-  
   def test_add_trader_page
     get '/crew/new_trader'
     assert_equal(200, last_response.status)
@@ -128,34 +125,53 @@ class CoreSpaceTest < MiniTest::Test
     assert_equal(200, last_response.status)
     assert_equal({"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{"marksman"=>"3"}}, session[:trader])
   end
-  
+
   def test_save_trader
     create_session_trader
+    post '/crew/new_trader/save_trader'
+    assert_equal(session[:crew]['Jungo'], {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{}} )
+    assert_equal(302, last_response.status)
+    assert_equal(session[:trader], nil)
+    
     post '/crew/new_trader/select_skills', { skill_name: 'marksman', skill_level: 3 }
     assert_equal(302, last_response.status)
-    
-    get last_response["Location"]
-    assert_equal(200, last_response.status)
-    
     post '/crew/new_trader/save_trader'
     assert_equal(302, last_response.status)
     
+    
     get last_response["Location"]
     assert_equal(200, last_response.status)
-    assert_includes(last_response.body, "Jungo")
-    assert_includes(last_response.body, "Add Trader")
-    assert_equal(session[:crew], {"Jungo" => {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{"marksman"=>"3"}}} )
+    assert_equal(session[:crew]['Jungo'], {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{"marksman"=>"3"}} )
   end
   
-  
+  def test_delete_trader
+    create_session_crew
+    
+    get '/crew'
+    assert_equal(session[:crew], { "Jungo" => {"name"=>"Jungo", "trader_class"=>"soldier", "skills"=>{}}} )
+    assert_includes(last_response.body, "Jungo")
 
+    post '/crew/delete_trader', {delete_name: 'Jungo'}
+    assert_equal(302, last_response.status)
+    assert_empty(session[:crew])
+    
+    get last_response["Location"]
+    assert_equal(200, last_response.status)
+    refute_includes(last_response.body, "Jungo")
+  end
   
+  def test_save_crew
+    create_session_crew
+    post '/crew/save_crew'
+    assert(data_path + '/crew.yml')
+  end
+
   def test_params
     env "rack.session", {sess1: 'Goodbye!' }  # sets a session variable for test!
     post '/test_params', {param1: 'Hello World!'}# sets a param variable for test!
     assert_includes(last_response.body, 'Goodbye!')
+    assert_equal(session[:sess1], 'Goodbye!')
   end
   
-    
 
 end

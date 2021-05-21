@@ -200,7 +200,7 @@ post '/crew/delete_trader' do
 end
 
 post '/crew/save_crew' do
-  File.write('data/crew.yml', session[:crew].to_yaml)
+  File.write(data_path + '/crew.yml', session[:crew].to_yaml)
   
   redirect '/crew'
 end
