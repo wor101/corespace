@@ -10,7 +10,6 @@
       <%= details['name'] %> 
       <form action="/crew/new_trader/select_skills" method="post">
         <input type="hidden" id="skill_name" name="skill_name" value="<%= skill %>">
-        
         <select name="skill_level" id="skill_level">
           <% (0..@class_skills[skill]).each do |level| %>
             <% if @trader['skills'][skill] == level.to_s %>
@@ -20,10 +19,6 @@
             <% end %>
           <% end %>
         </select>
-        
-        
-        
-        
         <button type="submit">Set Skill</button>
       </form>
     </li>
@@ -35,16 +30,10 @@
   <button type="submit">Save Trader</button>
 </form>
 
+<!-- Need to clean up and delte the below -->
 <% if @temp_skill %>
   <p><%= @temp_skill %></p>
 <% end %>
-
-
-<!-- <p><%= @class_skills.to_s %></p>
-<p><%= @trader['trader_class'].to_s %></p>
-<p><%= @available_skills.to_s %></p>
--->
-<p><%= @trader['skills'] %></p>
 
 
 <p><%= @trader.to_s %></p>
