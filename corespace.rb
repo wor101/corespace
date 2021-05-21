@@ -76,6 +76,9 @@ helpers do
     end
   end
 
+  def valid_skill_selection?(skill_level)
+    skill_level.to_i != 0
+  end
 end
 
 get '/' do
@@ -172,7 +175,7 @@ post '/crew/new_trader/select_skills' do
   @trader = session[:trader]
   selected_skill = params['skill_name']
   skill_level = params['skill_level']
-  @trader['skills'][selected_skill] = skill_level
+  @trader['skills'][selected_skill] = skill_level if valid_skill_selection?(skill_level)
   session[:trader] = @trader
   
   redirect '/crew/new_trader/select_skills'
