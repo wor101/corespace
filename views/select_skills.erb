@@ -10,16 +10,20 @@
       <%= details['name'] %> 
       <form action="/crew/new_trader/select_skills" method="post">
         <input type="hidden" id="skill_name" name="skill_name" value="<%= skill %>">
+        
         <select name="skill_level" id="skill_level">
-          <% if @trader['skills'][skill] %>
-            <option selected ><%= @trader['skills'][skill] %></option>
-          <% end %>
           <% (0..@class_skills[skill]).each do |level| %>
-            <% unless @trader['skills'][skill].to_i  == level.to_i && level.to_i != 0 %>
+            <% if @trader['skills'][skill] == level.to_s %>
+              <option selected ><%= level %></option>
+            <% else %>
               <option><%= level %></option>
-            <% end %>  
+            <% end %>
           <% end %>
         </select>
+        
+        
+        
+        
         <button type="submit">Set Skill</button>
       </form>
     </li>
@@ -40,6 +44,9 @@
 <p><%= @trader['trader_class'].to_s %></p>
 <p><%= @available_skills.to_s %></p>
 -->
+<p><%= @trader['skills'] %></p>
+
+
 <p><%= @trader.to_s %></p>
 
 <br>
