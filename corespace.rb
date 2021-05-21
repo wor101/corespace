@@ -129,6 +129,11 @@ get '/classes/:class_name' do
   erb :class, layout: :layout
 end
 
+get '/crews' do
+  
+  erb :crews, layout: :layout
+end
+
 get '/crew' do
   session.delete(:trader) unless session[:trader].nil?
   
