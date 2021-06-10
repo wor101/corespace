@@ -3,12 +3,12 @@
 <% end %>
 
 <h1>Name: <%= @trader['name'] %></h1>
-<h3><b>Class Skills:<b></b></h3>
+<h3><b>Available Skills<b></b></h3>
 <ul>
   <% @available_skills.each do |skill, details| %>
     <li>
       <%= details['name'] %> 
-      <form action="/crew/new_trader/select_skills" method="post">
+      <form action="/crew/<%= @trader['name'] %>/edit_skills" method="post">
         <input type="hidden" id="skill_name" name="skill_name" value="<%= skill %>">
         <select name="skill_level" id="skill_level">
           <% (0..@class_skills[skill]).each do |level| %>
@@ -24,25 +24,10 @@
     </li>
   <% end %>
 </ul>
-
-<h3><b>Inherent Skill:<b></b></h3>
-<form action="/crew/new_trader/select_skills" method="post">
-  <select name="skill_name" id="skill_name">
-    <% @all_skills.each do |name, details| %>
-      <option><%= name %></option>
-    <% end %>
-  </select>
-  <select name="skill_level" id="skill_level">
-      <% (0..3).each do |level| %>
-        <option><%= level %></option>
-      <% end %>
-  </select>
-  <button type="submit">Set Skill</button>
-</form>
 <br>
 
-<form action="/crew/new_trader/save_trader" method="post">
-  <button type="submit">Save Trader</button>
+<form action="/crew" method="get">
+  <button type="submit">Return to Crew</button>
 </form>
 
 <!-- Need to clean up and delte the below -->

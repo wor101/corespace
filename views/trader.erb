@@ -3,9 +3,9 @@
 <% end %>
 
 <h1><%= @trader['name'] %></h1>
-
+<h3>Class Skills</h3>
 <ul>
-  <% @class_skills.each_pair do |skill, details| %>
+  <% @all_skills.each_pair do |skill, details| %>
     <% if @trader['skills'].keys.include?(skill) %>
       <li>
         <h3>
@@ -26,4 +26,25 @@
   <% end %>
 </ul>
 
-
+<h3>Inherent Skills</h3>
+<% @trader['skills'].each_pair do |skill, level| %>
+  <% next if @class_skills.has_key?(skill) %>
+    <% details = @all_skills[skill] %>
+    <ul>
+      <li>
+        <h3>
+          <a href="/skills/<%= details['category'] %>/<%= skill %>">
+            <img src="/icons/<%= details['image'] %>" >
+          </a>
+          <a href="/skills/<%= details['category'] %>/<%= skill %>"><%= details['name'] %></a>
+        </h3>
+        <ul>
+          <% (1..3).each do |level| %>
+            <% unless details[level].nil? || @trader['skills'][skill].to_i < level.to_i %>
+              <li><%= level %>: <%= details[level] %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+<% end %>

@@ -77,7 +77,12 @@ helpers do
   end
 
   def valid_skill_selection?(skill_level)
-    skill_level.to_i != 0
+    # skill_level != 0
+    true
+  end
+
+  def remove_skill(trader_name, selected_skill)
+    session[:crew][trader_name]['skills'].delete(selected_skill)  
   end
 end
 
@@ -172,6 +177,7 @@ get '/crew/new_trader/select_skills' do
   
   @class_skills = trader_class['skills']
   @available_skills = load_class_skills(@trader['trader_class'])
+  @all_skills = all_skills_without_category
   
   erb :select_skills, layout: :layout
 end
@@ -202,6 +208,34 @@ post '/crew/delete_trader' do
   session[:crew].delete(params[:delete_name])
   
   redirect '/crew'
+end
+
+get '/crew/:trader/edit_skills' do
+  redirect '/crew' if session[:crew][params[:trader]].nil?
+  trader_name = params[:trader]
+  @trader = session[:crew][trader_name]
+
+  classes = load_classes
+  trader_class = classes[@trader['trader_class']]
+
+  @class_skills = trader_class['skills']
+  @available_skills = load_class_skills(@trader['trader_class'])
+  
+  erb :edit_skills, layout: :layout
+end
+
+post '/crew/:trader/edit_skills' do
+  trader_name = params[:trader]
+  selected_skill = params['skill_name']
+  skill_level = params['skill_level']
+
+  if skill_level.to_i == 0
+    remove_skill(trader_name, selected_skill)
+  else
+    session[:crew][trader_name]['skills'][selected_skill] = skill_level if valid_skill_selection?(skill_level)
+  end
+  #redirect '/crew'
+  redirect "/crew/#{trader_name}/edit_skills"
 end
 
 post '/crew/save_crew' do
