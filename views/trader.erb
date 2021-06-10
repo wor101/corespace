@@ -6,7 +6,7 @@
 <h3>Class Skills</h3>
 <ul>
   <% @all_skills.each_pair do |skill, details| %>
-    <% if @trader['skills'].keys.include?(skill) %>
+    <% if @trader['skills'].keys.include?(skill) && @class_skills.has_key?(skill) %>
       <li>
         <h3>
           <a href="/skills/<%= details['category'] %>/<%= skill %>">
