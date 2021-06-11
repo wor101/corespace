@@ -218,8 +218,9 @@ get '/crew/:trader/edit_skills' do
   classes = load_classes
   trader_class = classes[@trader['trader_class']]
 
+  @all_skills = all_skills_without_category
   @class_skills = trader_class['skills']
-  @available_skills = load_class_skills(@trader['trader_class'])
+  @available_class_skills = load_class_skills(@trader['trader_class'])
   
   erb :edit_skills, layout: :layout
 end

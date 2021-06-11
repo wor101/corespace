@@ -3,9 +3,9 @@
 <% end %>
 
 <h1>Name: <%= @trader['name'] %></h1>
-<h3><b>Available Skills<b></b></h3>
+<h3><b>Class Skills<b></b></h3>
 <ul>
-  <% @available_skills.each do |skill, details| %>
+  <% @available_class_skills.each do |skill, details| %>
     <li>
       <%= details['name'] %> 
       <form action="/crew/<%= @trader['name'] %>/edit_skills" method="post">
@@ -24,7 +24,17 @@
     </li>
   <% end %>
 </ul>
-<br>
+
+<h3><b>Inherent Skills</b></h3>
+<%= @trader['skills'] %>
+<%= @available_class_skills.keys %>
+<ul>
+  <select name="skill_name" id="skill_name">
+    <% @all_skills.each_pair do |name, details| %>
+      <option value="<%= name %>"><%= details['name'] %></option>
+    <% end %>
+  </select>
+</ul>
 
 <form action="/crew" method="get">
   <button type="submit">Return to Crew</button>
