@@ -12,4 +12,4 @@ only the skills that trader is trained in and details on what the skill does.
 All data is stored in the users cookie and will be erased upon deletion
 
 Currently hosted on heroku at:
-https://nameless-ridge-10099.herokuapp.com/
+https://wor101-corespace.herokuapp.com/
